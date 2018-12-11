@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+center = { lat: 1.3521, lng: 103.8198 }
+radius = 5
+
+10.times do
+  point = RandomPointGenerator.random_location(center, radius)
+  Scooter.create(longitude: point[:lng], latitude: point[:lat])
+end
